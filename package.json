@@ -1,5 +1,40 @@
 {
+    "name": "laravel-playground",
+    "description": "Laravel with implementation of Repository and Service Pattern",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mcoypaco/laravel-playground.git"
+    },
+    "bugs": {
+        "url": "https://github.com/mcoypaco/laravel-playground/issues"
+    },
+    "homepage": "https://github.com/mcoypaco/laravel-playground#readme",
     "private": true,
+    "release": {
+        "branches": [
+            {
+                "name": "main"
+            },
+            {
+                "name": "beta",
+                "prerelease": true
+            }
+        ],
+        "plugins": [
+            "@semantic-release/commit-analyzer",
+            "@semantic-release/release-notes-generator",
+            "@semantic-release/changelog",
+            "@semantic-release/git",
+            "@semantic-release/github",
+            [
+                "@semantic-release/npm",
+                {
+                    "npmPublish": false
+                }
+            ]
+        ]
+    },
     "scripts": {
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -10,12 +45,15 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "@semantic-release/changelog": "^6.0.2",
+        "@semantic-release/git": "^10.0.1",
         "axios": "^0.19",
         "cross-env": "^7.0",
         "laravel-mix": "^6.0.49",
-        "lodash": "^4.17.13",
+        "lodash": "^4.17.21",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.15.2",
-        "sass-loader": "^13.2.0"
+        "sass-loader": "^13.2.0",
+        "semantic-release": "^19.0.5"
     }
 }
